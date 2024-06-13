@@ -1,0 +1,69 @@
+.todo {
+    font-family: sans-serif; /* open sans not working - possibly firefox issue */
+    background-color: white;
+    margin: auto;
+    padding: 16px;
+    font-weight: 300;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 8px;
+    width: 60%;
+}
+
+.completeButton {
+    background-color: white;
+    border: solid 2px #ff69b4;
+    color: #ff69b4;
+    border-radius: 8px;
+}
+
+.completed {
+    text-decoration: line-through
+}
+
+.removeButton {
+    border: none;
+    background-color: white;
+    float: right;
+}
+
+.highP {
+    color: crimson;
+}
+
+.lowP {
+    color: DarkGoldenrod;
+}
+
+.priorityArrow {
+    display: inline
+}
+
+.taskForm {
+    border: solid 2px lightgrey;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+input[type=text], input[type=number] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: solid 2px lightgrey;
+}
+
+.addTaskButton {
+    color: white;
+    border: solid 2px lightgrey;
+    height: 32px;
+    background-color: #f857a6;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+#congrats {
+    text-align: center;
+}
