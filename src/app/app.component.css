@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 .todo {
-    font-family: sans-serif; /* open sans not working - possibly firefox issue */
+    font-family: Open Sans; /* open sans not working - possibly firefox issue */
     background-color: white;
     margin: auto;
     padding: 16px;
     font-weight: 300;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     border-radius: 8px;
-    width: 60%;
+    width: 70%;
 }
 
 .completeButton {
@@ -42,6 +44,7 @@
     border: solid 2px lightgrey;
     border-radius: 8px;
     padding: 16px;
+    margin-bottom: 16px;
 }
 
 input[type=text], input[type=number] {
@@ -57,7 +60,7 @@ input[type=text], input[type=number] {
     color: white;
     border: solid 2px lightgrey;
     height: 32px;
-    background-color: #f857a6;
+    background-color: #ff1493;
     margin-top: 8px;
     margin-bottom: 8px;
     width: 100%;

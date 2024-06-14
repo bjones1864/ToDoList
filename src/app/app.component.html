@@ -1,22 +1,21 @@
 <div class="todo">
   <h1>{{ title }}</h1>
-  @if(!todoList.length)
+  @if(isListComplete())
   {
     <h3 id="congrats" >No tasks remaining.  Congratulations!</h3>
   }
+  <input type="text" [(ngModel)]="filter" placeholder="Filter your to-dos" />
   <ol>
-    @for(t of todoList; track $index)
+    @for(t of getFiltered(); track $index)
     {
       <li [class.completed]="t.completed">
-        @if(!t.completed) {
-          <button type="button" class="completeButton" (click)="completeTask(t)">Complete</button>
-        }
+        <button [hidden]="t.completed" type="button" class="completeButton" (click)="completeTask(t)">Complete</button>
         {{ t.task }} ({{ t.duration | number}} min)
-        @if(t.priority == "High")
+        @if(t.priority == "HIGH")
         {
           <p class="priorityArrow highP">&uarr; High Priorty</p>
         }
-        @else if(t.priority == "Low")
+        @else if(t.priority == "LOW")
         {
           <p class="priorityArrow lowP">&darr; Low Priorty</p>
         }
@@ -37,11 +36,11 @@
     <label for="inputPriority">What is the priority level?</label>
     <div id="inputPriority">
       <label for="priorityHigh">High Priority</label>
-      <input type="radio" class="inputBox" id="priorityHigh" value="High" [(ngModel)]="formTask.priority" />
+      <input type="radio" class="inputBox" id="priorityHigh" value="HIGH" [(ngModel)]="formTask.priority" />
       <label for="priorityNormal">Normal Priority</label>
-      <input type="radio" class="inputBox" id="priorityNormal" value="Normal" [(ngModel)]="formTask.priority" />
+      <input type="radio" class="inputBox" id="priorityNormal" value="NORMAL" [(ngModel)]="formTask.priority" />
       <label for="priorityLow">Low Priority</label>
-      <input type="radio" class="inputBox" id="priorityLow" value="Low" [(ngModel)]="formTask.priority" />
+      <input type="radio" class="inputBox" id="priorityLow" value="LOW" [(ngModel)]="formTask.priority" />
       <br>
       <button class="addTaskButton" (click)="addTask()">Add Task</button>
     </div>

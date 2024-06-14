@@ -16,24 +16,26 @@ export class AppComponent {
 
   formTask: Todo = {} as Todo;
 
+  filter: string = "";
+
   todoList: Todo[] = [
     {
       task: "Clean room",
       completed: false,
       duration: 30,
-      priority: "Low"
+      priority: "LOW"
     },
     {
       task: "Walk Dog",
       completed: true,
       duration: 45,
-      priority: "Normal"
+      priority: "NORMAL"
     },
     {
       task: "Buy Gift",
       completed: false,
       duration: 60,
-      priority: "High"
+      priority: "HIGH"
     }
   ];
 
@@ -52,4 +54,31 @@ export class AppComponent {
   addTask(): void{
     this.todoList.push({...this.formTask});
   }
+
+  isListComplete():boolean {
+    //No items
+    if(this.todoList.length == 0){
+      return true;
+    }
+    //any incomplete
+    let allComplete:boolean = true;
+    this.todoList.forEach((t:Todo) =>{
+      if(t.completed == false){
+        allComplete = false;
+      }
+    });
+    //all complete
+    return allComplete;
+  }
+
+  getFiltered():Todo[] {
+    if(this.filter == ""){
+      return this.todoList;
+    }
+    else {
+      return this.todoList.filter((t: Todo) => t.task.toLowerCase().includes(this.filter.toLowerCase()));
+    }
+  }
+
+
 }
